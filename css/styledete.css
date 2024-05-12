@@ -1,0 +1,371 @@
+ /* Global Styles */
+ body {
+	font-family: 'Roboto', sans-serif;
+	color: #3a3f42;
+}
+.nav__link{
+	color: white;
+	font-size: 15px;
+	position: relative;
+	transition: all 3s;
+  }
+  .nav__link:hover::after{
+	color: #0172FA;
+	opacity: 1;
+  }
+  .nav__link::after{
+	content: "";
+	height: 3px;
+	width: 80%;
+	background-color: #0172FA;
+	display: block;
+	position: absolute;
+	left: 10%;
+	top: 40px;
+	opacity: 0;
+  }
+section {
+	padding: 100px 0;
+}
+
+h2 {
+	font-size: 36px;
+	font-weight: 700;
+}
+
+p {
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: .05em;
+	color: #53627C;
+	margin-bottom: 20px;
+}
+
+.container {
+	text-align: center;
+}
+
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+}
+
+#call-to-action {
+	background-image: url(../images-detection/call-to-action.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 100px 0;
+}
+
+#call-to-action h2 {
+	color: #ffffff;
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+.sec{
+	margin-top: 2%;
+}
+#call-to-action p {
+	color: #ffffff;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+#hero {
+	background-color: #f6f8f9;
+	padding: 100px 0;
+}
+
+.hero-content {
+	text-align: left;
+	margin-top: 50px;
+}
+
+.hero-content span {
+	font-weight: 400;
+	color: #0095f7;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
+
+.hero-content h1 {
+	font-size: 42px;
+	font-weight: 300;
+}
+
+.hero-content p {
+	font-size: 18px;
+	font-weight: 300;
+	color: #8da2b5;
+	margin-bottom: 20px;
+}
+
+/* Additional CSS for adjusting image position */
+.img-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.img-wrapper img {
+	transition: transform 0.5s ease;
+}
+
+.img-wrapper:hover img {
+	transform: translateX(-20%);
+}
+
+/* Custom Styles for Form and Results */
+.upload-form {
+	margin-top: 20px;
+	text-align: center;
+}
+
+#submitBtn {
+	margin-top: 10px;
+	background-color: #0095f7;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.result-container {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.image-container {
+	margin-bottom: 20px;
+}
+
+.classification-result {
+	text-align: left;
+}
+
+.classification-result div {
+	background-color: #f6f8f9;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.classification-result div strong {
+	color: #0095f7;
+}
+/* line 2, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+.footer-area {
+	background-color: #F3F6F7;
+  }
+  
+  @media (max-width: 991px) {
+	/* line 5, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+	.footer-area .single-footer-widget {
+	  margin-bottom: 30px;
+	}
+  }
+
+  /* line 14, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget h4 {
+	color: #242429;
+	font-style: inherit;
+	margin-bottom: 30px;
+	font-weight: 700;
+	font-size: 20px;
+  }
+  
+  @media (max-width: 1024px) {
+	/* line 14, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+	.footer-area .single-footer-widget h4 {
+	  font-size: 18px;
+	}
+  }
+  
+  @media (max-width: 991px) {
+	/* line 14, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+	.footer-area .single-footer-widget h4 {
+	  margin-bottom: 15px;
+	}
+  }
+  
+  /* line 31, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget ul li {
+	margin-bottom: 14px;
+  }
+  
+  /* line 34, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget ul li a {
+	color: #7f7f7f;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+  }
+  
+  /* line 38, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget ul li a:hover {
+	color: #0065e1;
+  }
+  
+  /* line 45, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget .form-wrap {
+	margin-top: 25px;
+	position: relative;
+  }
+  
+  /* line 50, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget input {
+	height: 48px;
+	border: none;
+	width: 100% !important;
+	font-weight: 400;
+	background: transparent;
+	padding-left: 20px;
+	border-radius: 0;
+	font-size: 14px;
+	padding: 10px;
+	border: 1px solid #e1e1e1 !important;
+	color: #999999;
+  }
+  
+  /* line 64, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget input:focus {
+	outline: none;
+	box-shadow: none;
+  }
+  
+  /* line 75, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget .click-btn {
+	background-color: #0065e1;
+	color: #fff;
+	border-radius: 5px;
+	border: 0;
+	position: absolute;
+	right: 5px;
+	width: 40px;
+	height: 40px;
+	line-height: 30px;
+	text-align: center;
+	display: inline-block;
+  }
+  
+  /* line 87, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .single-footer-widget .click-btn:focus {
+	outline: none;
+	box-shadow: none;
+  }
+  
+  /* line 93, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .footer_logo {
+	margin-bottom: 30px;
+	display: inline-block;
+  }
+  
+  /* line 97, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .social_logo {
+	margin-top: 20px;
+  }
+  
+  /* line 100, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .social_logo a {
+	color: #b8bcbf;
+	margin-right: 10px;
+  }
+  
+  /* line 103, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .social_logo a:hover {
+	color: #0065e1;
+  }
+  
+  /* line 108, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .footer-bottom {
+	margin-top: 70px;
+  }
+  
+  @media (max-width: 991px) {
+	/* line 108, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+	.footer-area .footer-bottom {
+	  margin-top: 20px;
+	}
+  }
+  
+  /* line 126, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .footer-bottom .footer-social {
+	text-align: center;
+  }
+  
+  @media (max-width: 991px) {
+	/* line 126, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+	.footer-area .footer-bottom .footer-social {
+	  text-align: left;
+	  margin-top: 30px;
+	}
+  }
+  
+  /* line 134, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .footer-bottom .footer-social a {
+	background: rgba(255, 255, 255, 0.15);
+	margin-left: 3px;
+	width: 32px;
+	display: inline-grid;
+	text-align: center;
+	height: 32px;
+	align-content: center;
+  }
+  
+  /* line 150, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .footer-bottom .footer-social a i,
+  .footer-area .footer-bottom .footer-social a span {
+	font-size: 14px;
+  }
+  
+  /* line 158, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .copyright_part {
+	background-color: #0d1820;
+	padding: 26px 0px;
+  }
+  
+  /* line 162, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .copyright_part a {
+	color: #0065e1;
+  }
+  
+  @media (max-width: 576px) {
+	/* line 166, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+	.footer-area .copyright_part .footer-social {
+	  margin-top: 20px;
+	}
+  }
+  
+  /* line 177, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .copyright_part .footer-social a {
+	margin-left: 20px;
+	color: #fff;
+	text-align: center;
+  }
+  
+  /* line 182, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .copyright_part .footer-social a:hover {
+	color: #0065e1;
+  }
+  
+  /* line 187, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .copyright_part .footer-social a i:hover {
+	color: #0065e1;
+  }
+  
+  /* line 192, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+  .footer-area .copyright_part .footer-social a [class^="ti-"],
+  .footer-area .copyright_part .footer-social a [class*=" ti-"] {
+	line-height: 0;
+  }
+  
+  @media (max-width: 991px) {
+	/* line 200, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_footer.scss */
+	.footer-area .copyright_part .footer-text {
+	  text-align: center;
+	}
+  }
+  
+
+
+ 

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Questions</title>
+</head>
+
+<body>
+
+    <header class="main_menu  bg-light ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand w-25" href="index.html"> <img class="wow animate__fadeInLeft w-75 float-left" data-wow-duration="3s" src="vethub.png" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+  
+                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item ml-3">
+                                    <a class="nav-link nav__link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item ml-3">
+                                    <a class="nav-link nav__link" href="about.html">about</a>
+                                </li>
+                                <li class="nav-item ml-3">
+                                    <a class="nav-link nav__link" href="Doctor.html">Doctors</a>
+                                </li>
+  
+                                <li class="nav-item ml-3">
+                                   <a class="nav-link nav__link" href="services.html">services</a>
+                                </li>
+                                <li class="nav-item dropdown ml-3">
+                                    <a class="nav-link dropdown-toggle nav__link" href="blog.html" id="navbarDropdown_1"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Mediacl News
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                        <a class="dropdown-item" href="blog.html">Articles</a>
+                                        <a class="dropdown-item" href="single-blog.html">Single Article</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item ml-3">
+                                    <a class="nav-link nav__link" href="contact.html">Contact</a>
+                                </li>
+                                <li class="nav-item ml-3">
+                                    <a href="Sign.html" class="nav-link"><button class="btn mb-2 btn-outline-primary"> Login</button></a>
+                                </li>
+                                <li class="nav-item ml-3">
+                                    <a href="Sign.html" class="nav-link"><button class="btn mb-2 btn-outline-primary"> Register</button></a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="mc shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+        <div class="qa_container" id="content">
+            <div class="col1">
+                <div class="userimg">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80" alt=" profile photo">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <form method="post" action="indexx.html" class="askquestion">
+        <label class="h3">Topic :</label>
+        <input type="text" id="title" name="title" class="form-control" placeholder="ex : Learn php " required />
+        <br>    
+        <label class="h3">Content :</label>
+        <textarea name="contentDetails" id="contentDetails" rows="40" cols="80">
+        </textarea>
+        <button class="savequs" type="submit">Submit Question</button>
+    </form>
+
+    <!-- <div class="rightmc">
+        <div><button id="btn" onclick="ani('mc' , 'askquestion' , this.id)">ASK A QUESTION</button></div>
+        <div class="pageinfo">
+            <div class="pi_row">
+                <div class="tq" style="--bc:#0169af;"><span>Questions</span><br> <span class="counter"
+                        data-count="15">0</span></div>
+                <div class="ans" style="--bc:rgb(243, 109, 109);"><span>Answers</span><br> <span class="counter"
+                        data-count="10">0</span></div>
+
+            </div>
+            <div class="pi_row">
+                <div class="users" style="--bc:rgb(134, 230, 138);"><span>Users</span><br> <span class="counter"
+                        data-count="9">0</span></div>
+                <div class="ansu" style="--bc:#0169af;"><span>Your Ans</span><br> <span class="counter"
+                        data-count="5">0</span></div>
+            </div>
+        </div>
+
+    </div> -->
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
