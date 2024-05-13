@@ -17,8 +17,8 @@
         }
 
         body{
-            background-color: #9c9c9c;
-            background-image: url(img/wp2581367.webp);
+            background-color: #ffffff;
+            
             opacity: 0.89;
             background-repeat: no-repeat;
             background-position: center;
@@ -231,20 +231,20 @@
     <div class="form-container sign-up">
         <form id="signup">
             <h1><i class="bi bi-person-plus-fill"></i> Create Account</h1>
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm Password">
-            <button><i class="bi bi-arrow-right-circle"></i> Register</button>
+            <input type="text" id="name" name="Name " placeholder="Name ">
+            <input type="email" id="email" name="Email "  placeholder="Email ">
+            <input type="number" id="phone" name="Phone "  placeholder="Phone ">
+            <input type="password" id="pass" name="Password " placeholder="Password ">
+            <input type="password" id="repass" name="RePassword " placeholder="RePassword ">
+            <button type="submit" id="myregister" ><i class="bi bi-arrow-right-circle"></i> Register</button>
         </form>
     </div>
     <div class="form-container sign-in">
         <form id="login">
             <h1><i class="bi bi-person-circle"></i> Sign In</h1>
-            <input type="email" id="" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button><i class="bi bi-arrow-right-circle"></i> Sign In</button>
+            <input type="email" name="Email" placeholder="Email">
+            <input type="password" name="Password" placeholder="password">
+            <button type="submit" onclick="openHTMLFile(index)"><i class="bi bi-arrow-right-circle"></i> Sign In</button>
         </form>
     </div>
     <div class="toggle-container">
@@ -263,7 +263,7 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
     const container = document.getElementById('container');
     const registerBtn = document.getElementById('register');
     const loginBtn = document.getElementById('login');
@@ -273,7 +273,7 @@
   password: 'your_password'
 };
 
-const url = 'http://vethub.runasp.net/api/Accounts/Login';
+const url = 'https://057d-156-210-104-81.ngrok-free.app/api/Accounts/Login';
 
 const options = {
   method: 'POST',
@@ -288,7 +288,7 @@ fetch(url, options)
     
   })
   .then(data => {
-    console.log(' a7a science :', data);
+    console.log(data);
 })
     registerBtn.addEventListener('click', () => {
         container.classList.add("active");
@@ -297,6 +297,73 @@ fetch(url, options)
     loginBtn.addEventListener('click', () => {
         container.classList.remove("active");
     });
+</script> -->
+
+<script>
+
+    //     Register Api
+const registerBtn = document.getElementById('register');
+    registerBtn.addEventListener('click', () => {   
+        container.classList.add("active");
+    });
+
+document.getElementById("myregister").addEventListener("click",function(event){
+        event.preventDefault();  
+        var nameinp = document.querySelector("#name").value;
+        var emailinp = document.querySelector("#email").value;
+        var phoneinp = document.querySelector("#phone").value;
+        var passwordinp = document.querySelector("#pass").value;
+        var repasswordinp= document.querySelector("#repass").value;
+        const formdata = new FormData();
+        formdata.append("Name", nameinp);
+        formdata.append("Email", emailinp);
+        formdata.append("Phone", phoneinp);
+        formdata.append("Password", passwordinp);
+        formdata.append("RePassword", repasswordinp);
+        
+        
+        const requestOptions = {
+          method: "POST",
+          body: formdata,
+          redirect: "follow"
+        };
+        function gotoHome(data){
+            window.location.href="Sign.html"
+        }
+        
+        fetch("http://vethub.runasp.net/api/Accounts/Register", requestOptions)
+          .then((response) => response.json ? gotoHome(response.json()) : console.log("noway"))
+          .then((result) => console.log(result))
+          .catch((error) => console.error(error));
+        
+    }) 
+
+
+
+//     LOGIN API
+document.getElementById("login").addEventListener("submit",function(event){
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch("http://vethub.runasp.net/api/Accounts/Login" , {
+    method: "POST",
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Sign In Problem");
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    window.location.href = "index.html";
+    
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+});
+    
 </script>
 
 </body>
