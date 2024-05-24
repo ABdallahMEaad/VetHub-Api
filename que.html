@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>  
+    <link rel="icon" href="img/favicon.jpg">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- animate CSS -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- owl carousel CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <!-- themify CSS -->
+        <link rel="stylesheet" href="css/themify-icons.css">
+        <!-- flaticon CSS -->
+        <link rel="stylesheet" href="css/flaticon.css">
+        <!-- magnific popup CSS -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <!-- nice select CSS -->
+        <link rel="stylesheet" href="css/nice-select.css">
+        <!-- swiper CSS -->
+        <link rel="stylesheet" href="css/slick.css">
+        <!-- style CSS -->
+        <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <header class="main_menu ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html"> <img class="wow animate__fadeInLeft w-50" data-wow-duration="3s" src="img/vethub.png" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                
+                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                             id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="scroll nav-item"><a class="nav-link nav__link" href="index.html">Home</a></li>
+                                <li class="scroll nav-item"><a class="nav-link nav__link" href="Detect.html">Detect</a></li>
+                                <li class="scroll nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle nav__link" href="blog.html" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medical News</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                        <a class="dropdown-item" href="#blog">Articles</a>
+                                        <a class="dropdown-item" href="single-blog.html">Single Article</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item w-100" id="loginLink"><a href="Sign.html"><button class="btn btn-outline-primary">Login <span style="font-size: 20px; font-weight: bold;">&</span> Register</button></a></li>
+                                <li class="nav-item" id="logoutLink" style="display: none;"><button class="btn btn-outline-primary" onclick="userLogout()">Logout</button></li>
+                                <li class="nav-item" style="width: 100px;"><span id="welcomeMessage" style="display: none; color: #0172FA; width: 100px; margin-left: 15%; font-weight: bold;"></span></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Questions -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="questions" id="questions">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

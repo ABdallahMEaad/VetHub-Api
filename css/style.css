@@ -14,6 +14,51 @@
 }
 /**************** common css start ****************/
 /* line 3, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_common.scss */
+/* body{
+  overflow: hidden;
+} */
+.loading{
+  width: 100%;
+  height: 100vh;
+  z-index: 999999999;
+  position: fixed;
+  background-color: #f3f5f9;
+
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #0172FA;
+  position: fixed;
+  z-index: 999999999;
+
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+html,body{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   padding: 0;
@@ -239,7 +284,9 @@ h2 {
   font-weight: 600;
   line-height: 1.222;
 }
-
+#fileInput{
+  display: none;
+}
 @media (max-width: 576px) {
   /* line 100, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_common.scss */
   h2 {
@@ -686,6 +733,24 @@ ul {
 .blog_area a:hover, .blog_area a :hover {
   color: #0065e1;
 }
+
+.custom-file-upload{
+  width: 250px;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #84b9f97f;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.custom-file-upload:hover {
+  background-color: #0172FA;
+  transition: 1s;
+}
+
 
 /* line 20, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_blog.scss */
 .single-blog {
@@ -1312,6 +1377,9 @@ ul {
   margin-bottom: 0;
   line-height: 1.2;
 }
+.dep img{
+  width: 8%;
+}
 .depart img{
   width: 15%;
 }
@@ -1623,6 +1691,13 @@ ul {
   margin-bottom: 20px;
   font-size: 15px;
 }
+
+.h2sty{
+  color: #0172FA;
+  font-size: 45px;
+  margin-bottom: 4%;
+}
+
 
 /* line 1080, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_blog.scss */
 .single-post-area .quote-wrapper {
@@ -2137,11 +2212,17 @@ ul {
   margin-right: 8px;
   color: #999999;
 }
-
+.blue{
+  font-size: 23px;
+  font-weight: bold;
+  /* background-color: #0172FA; */
+  color: #0172FA;
+}
 /* line 1, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_our_depertment.scss */
 .our_depertment {
   background-image: url("../img/review_bg.png");
   background-position: center;
+  background-attachment:fixed;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -3569,7 +3650,8 @@ ul {
 /* line 2, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_regervation_part.scss */
 .regervation_part {
   background-image: url("../img/reservation_bg.png");
-  background-position: center;
+  background-position:center ;
+  background-attachment:fixed ;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -6057,7 +6139,7 @@ h1, h2, h3, h4, h5, h6 {
 .breadcrumb_part {
   position: relative;
   z-index: 1;
-  height: 400px;
+  /* height: 400px; */
 }
 
 /* line 10, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_breadcrumb.scss */
@@ -6414,7 +6496,6 @@ p {
 
 #hero {
 	background-color: #f6f8f9;
-	padding: 100px 0;
 }
 
 .hero-content {
@@ -6652,3 +6733,49 @@ p {
 	  text-align: center;
 	}
   }
+
+/* #scroll-Top  .return-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  display: none;
+  width: 40px;
+  line-height: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  color: #e42020;
+  background:#4e4ffa;
+  border:1px solid #4e4ffa;
+  border-radius:50%;
+  -webkit-transition: .5s; 
+  -moz-transition:.5s; 
+  -ms-transition:.5s; 
+  -o-transition:.5s;
+    transition: .5s;
+  z-index: 2;
+}
+#scroll-Top  .return-to-top:hover {
+  background:#fff;
+  color: #4e4ffa;
+	border:1px solid #4e4ffa;
+}
+
+#scroll-Top  .return-to-top i{
+  position:relative;
+  bottom:0;
+
+}
+
+#scroll-Top  .return-to-top i{
+  position: relative;
+  animation-name: example;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration:1s;
+}
+@keyframes example {
+  0%   {bottom:0px;}
+  100%  {bottom:7px;}
+}   */

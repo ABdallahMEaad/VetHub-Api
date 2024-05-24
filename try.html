@@ -1,0 +1,263 @@
+<!-- <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض الأسئلة والإجابات</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            direction: rtl;
+        }
+        .container {
+            max-width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .qa-section {
+            margin-top: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+        .question-content {
+            font-weight: bold;
+            color: #1e90ff;
+        }
+        .answer {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-left: 3px solid #1e90ff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+        .answer-title {
+            color: #1e90ff;
+        }
+        .answer-name {
+            color: #555;
+        }
+        .answer-content {
+            margin-top: 10px;
+        }
+        .no-answer {
+            color: #ff0000;
+            font-style: italic;
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    #articles {
+        margin-top: 20px; 
+    }
+
+    .blog {
+        background-color: #f0f0f0; 
+        padding: 20px; 
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        margin-bottom: 20px; 
+    }
+
+    .blog h3 {
+        font-size: 24px; 
+        margin-bottom: 10px; 
+    }
+
+    .blog p {
+        font-size: 18px; 
+        color: #555; 
+    }
+    
+    .blog img {
+        max-width: 100%;  
+        height: auto; 
+        display: block;  
+        margin: 0 auto;  
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <h1 style="color: #1e90ff;">الأسئلة والإجابات</h1>
+                <div class="qa-section" id="qaSection"></div>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <img src="https://www.veterinary-practice.com/wp-content/uploads/2019/10/Cattle-scaled.jpeg" class="img-fluid" alt="صورة">
+                <div id="articles"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchArticles() {
+            try {
+                const response = await fetch('http://vethub.runasp.net/api/Article/GetAllArticle');
+                const data = await response.json();
+                
+                if (data.data && data.data.length > 0) {
+                    const articlesContainer = document.getElementById('articles');
+                    data.data.forEach((article, index) => {
+                        articlesContainer.innerHTML += `
+                            <div class="blog">
+                                <h3 class="text-primary mb-3 mt-2" style="font-size:30px">${article.title}</h3>
+                                <a href="single-blog.html" onclick="showArticle(${index}); return false;">
+                                    <img class="mb-3" src="${article.imageUrl}" alt="">
+                                </a>
+                                <p class="mb-5" style="font-size: 20px; font-weight:bold">${article.description}</p>
+                            </div>`;
+                    });
+                } else {
+                    document.getElementById('articles').innerText = 'لم يتم العثور على مقالات.';
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('articles').innerText = 'خطأ في جلب البيانات.';
+            }
+        }
+
+        function showArticle(index) {
+            localStorage.setItem('selectedArticleIndex', index);
+            window.location.href = 'single-blog.html';
+        }
+
+        async function fetchQuestions() {
+            try {
+                const response = await fetch('http://vethub.runasp.net/api/Question/GetAllQuestions');
+                const data = await response.json();
+                console.log('Fetched Questions:', data);
+                return data.data || []; 
+            } catch (error) {
+                console.error('Error fetching questions:', error);
+                return [];
+            }
+        }
+
+        async function fetchAnswers() {
+            try {
+                const response = await fetch('http://vethub.runasp.net/api/Comment/GetAllComment');
+                const data = await response.json();
+                console.log('Fetched Answers:', data);   
+                return data || []; 
+            } catch (error) {
+                console.error('Error fetching answers:', error);
+                return [];
+            }
+        }
+
+        async function displayQuestionsAndAnswers() {
+            const questions = await fetchQuestions();
+            const answers = await fetchAnswers();
+            const qaSection = document.getElementById('qaSection');
+
+            if (!Array.isArray(questions)) {
+                console.error('Questions data is not an array:', questions);
+                return;
+            }
+
+            for (const question of questions) {
+                const questionElement = document.createElement('div');
+                questionElement.className = 'question';
+                questionElement.innerHTML = `<div class="question-content">${question.content}</div>`;
+                qaSection.appendChild(questionElement);
+
+                const answersForQuestion = answers.filter(answer => answer.questionId === question.id);
+                if (answersForQuestion.length > 0) {
+                    for (const answer of answersForQuestion) {
+                        const answerElement = document.createElement('div');
+                        answerElement.className = 'answer';
+                        answerElement.innerHTML = `<div class="answer-title"><strong>العنوان:</strong> ${answer.title}</div>
+                                                   <div class="answer-name"><strong>الاسم:</strong> ${
+                                                    answer.name}</div>
+                                                   <div class="answer-content"><strong>المحتوى:</strong> ${answer.content}</div>`;
+                        questionElement.appendChild(answerElement);
+                    }
+                } else {
+                    const noAnswerElement = document.createElement('div');
+                    noAnswerElement.className = 'no-answer';
+                    noAnswerElement.textContent = 'لم يتم العثور على إجابة';
+                    questionElement.appendChild(noAnswerElement);
+                }
+            }
+        }
+
+        displayQuestionsAndAnswers();
+
+        fetchArticles();
+    </script>
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .diabetes-covid-summary {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.diabetes-covid-summary h2 {
+    color: #4a4a4a;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.diabetes-covid-summary p {
+    color: #4a4a4a;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3e8e41;
+}
+    </style>
+</head>
+<body>
+    <div class="diabetes-covid-summary">
+        <h2>Diabetes and COVID-19: Treatment of Patients</h2>
+        <p>An insightful article discussing the challenges and strategies in treating diabetes patients during the COVID-19 pandemic. Read the full article to learn more.</p>
+        <a href="Health_Nov_30_2021.html" class="cta-button">Read Full Article</a>
+    </div>
+</body>
+</html>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>VetHuB</title>
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="img/favicon.jpg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -25,45 +25,62 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="WOW-master/css/libs/animate.css">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- font awesome -->
+    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <!-- <div class="loading vh-100 d-flex justify-content-center align-items-center">
+        <div class="spinner"> </div>
+    </div> -->
+
+    <!-- Bck Top -->
+    <!-- <div id="scroll-Top">
+        <div class="return-to-top">
+            <i class="fa fa-angle-up fa-3x text-danger" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+        </div>
+    </div> -->
+
+
     <!--::header part start::-->
-    <header class="main_menu ">
+    <header  class="main_menu home_menu">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-12">
+                <div id="nav" class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img class="wow animate__fadeInLeft w-75" data-wow-duration="3s" src="img/vethub.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="Loading.html"> <img class="wow animate__fadeInLeft w-75" data-wow-duration="3s" src="img/vethub.png" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-  
+                
                         <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                            id="navbarSupportedContent">
+                             id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
-                                <li class="scroll nav-item"><a class=" nav-link nav__link" href="#home">Home</a></li>
-                                <li class="scroll nav-item"> <a class="nav-link nav__link" href="#about">about</a></li>
-                                <li class="scroll nav-item"><a class="nav-link nav__link" href="#features">services</a> </li>
-                                <li class="scroll nav-item"><a class="nav-link nav__link" href="#doctors">Doctors</a> </li>
-                                <li class="scroll nav-item"><a class="nav-link nav__link" href="Detect.html" target="_blank">Detect</a> </li>
+                                <li class="scroll nav-item"><a class="nav-link nav__link" href="#home">Home</a></li>
+                                <li class="scroll nav-item"> <a class="nav-link nav__link" href="#about">About</a></li>
+                                <li class="scroll nav-item"><a class="nav-link nav__link" href="#features">Services</a></li>
+                                <li class="scroll nav-item"><a class="nav-link nav__link" href="#doctors">Doctors</a></li>
+                                <li class="scroll nav-item"><a class="nav-link nav__link" href="Det Loading.html">Detect</a></li>
                                 <li class="scroll nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle nav__link" href="blog.html" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Mediacl News </a>
+                                    <a class="nav-link dropdown-toggle nav__link" href="blog.html" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medical News</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="blog.html">Articles</a>
+                                        <a class="dropdown-item" href="Artical Loading.html">Articles</a>
                                         <a class="dropdown-item" href="single-blog.html">Single Article</a>
                                     </div>
                                 </li>
                                 <li class="scroll nav-item"><a class="nav-link nav__link" href="#contact">Contact</a></li>
-                                <li class="nav-item"> <a href="Sign.html" class="nav-link active"><button class="btn btn-outline-primary"><i class="fa-solid fa-right-to-bracket fa-beat me-1" style="color: #000000;"></i> Login</button></a></li>
-                                <li class="nav-item"><a href="Sign.html" class="nav-link active"><button class="btn btn-outline-primary"> <i class="fa-solid fa-user-plus fa-bounce me-1" style="color: #000000;"></i> Register</button></a> </li>
+                                <li class="nav-item w-100 rounded" id="loginLink"><a href="Sign.html"><button class="btn btn-outline-primary rounded-pill w-75"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                  </svg>  SignIN</button></a></li>
+                                <li class="nav-item" id="logoutLink" style="display: none;"><button class="btn btn-outline-primary" onclick="userLogout()">Logout</button></li>
+                                <li class="nav-item" style="width: 100px;"><span id="welcomeMessage" style="display: none; color: #0172FA; width: 100px; margin-left: 15%; font-weight: bold;"></span></li>
                             </ul>
                         </div>
-                        
                     </nav>
                 </div>
             </div>
@@ -71,7 +88,7 @@
     </header>
 
     <!-- banner part start-->
-    <section id="home" class="banner_part">
+    <section id="home" class="banner_part" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-xl-5">
@@ -79,13 +96,27 @@
                         <div class="banner_text_iner"> 
                             <h1>Accuracy <span class="sty"> &</span> Preference</h1>
                             <br>
-                            <p>Vet Hub is an online portal capable of communicating with veterinarians and understanding everything related to skin disease in animals.</p>
+                            <p>VetHub is an online portal capable of communicating with veterinarians and understanding everything related to skin disease in animals.</p>
                         </div>
                     </div>  style="font-size: 40px; color: #0172FA;"
                 </div>
                 <div class="col-lg-7">
                     <div class="banner_img ml-5">
                         <img class="wow animate__zoomInRight w-75" data-wow-duration="3s" src="img/downloadd.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer" style="position: absolute; color: #000000; left: 10; z-index: 20%;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="cap text-danger">
+                            <h2>fdsf</h2>
+                            <h2>fdsf</h2>
+                            <h2>fdsf</h2>
+                            <p>xfasfkasm;ckslmsjlbvksjnscnsljvn;sknvljnv</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -316,43 +347,40 @@
             <div class="row align-items-center regervation_content">
                 <div class="col-lg-7">
                     <div class="regervation_part_iner">
-                        <form>
+                        <form id="doctorForm">
                             <h2>Join Us AS a Doctor</h2>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Name">
+                                    <input type="text" class="form-control" id="nameInput" placeholder="Name">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" id="inputPassword4"
-                                        placeholder="Email address">
+                                    <input type="email" class="form-control" id="emailInput" placeholder="Email address">
                                 </div>
                                 <div class="form-group time_icon col-md-6">
-                                    <input type="number" class="form-control" id="inputPassword4"
-                                        placeholder="Phone Number">
+                                    <input type="tel" class="form-control" maxlength="11" id="phoneInput" placeholder="Phone Number">
                                 </div>
                                 <div class="form-group time_icon col-md-6">
-                                    <input type="date" class="form-control" id="inputPassword4"
-                                        placeholder="Date of Birth">
+                                    <input type="date" class="form-control" id="dobInput" placeholder="Date of Birth">
                                 </div>
-                                <div class="form-group  col-md-6">
-                                    <select class="form-control" id="Select">
-                                        <option value="1" selected>Gender</option>
-                                        <option value="2">Male</option>
-                                        <option value="3">Female</option>
+                                <div class="form-group col-md-6">
+                                    <select class="form-control" id="genderSelect">
+                                        <option value="1" selected disabled>Gender</option>
+                                        <option value="true">Male</option>
+                                        <option value="false">Female</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" id="inputPassword4"
-                                        placeholder="Specialization">
+                                    <input type="text" class="form-control" id="specializationInput" placeholder="Specialization">
                                 </div>
                                 <div class="form-group btn col-md-6">
-                                    <input type="file" id="fileInput" accept="image/*">
+                                    <input type="file" id="fileInput">
                                 </div>
                             </div>
                             <div class="regerv_btn w-100">
-                                <a href="#" class="btn_2">Submit</a>
+                                <button type="submit" class="btn_2" onclick="submitJoinUs()">Submit</button>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6">
@@ -369,20 +397,24 @@
     <!-- contact section start -->
     <section id="contact" class="contact-section section_padding">
         <div class="container">
-            <div class="depart section_tittle text-center">
-                <h2><img class="serv" data-wow-duration="2s" src="img/icon/department.svg" alt=""> <span class="sty">Contact</span> Us Now</h2>
+            <div class="dep section_tittle text-center">
+                <h2><img class="serv" data-wow-duration="2s" src="img/icon/Phone_icon.png" alt=""> <span class="sty">Contact</span> Us Now</h2>
+                <p>Contact US if u have a problem about VetHub Web</p>
             </div>  
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.7205148762474!2d31.756965515622426!3d30.306634083767683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1457fd86f1f7d3e3%3A0x250c7d101153c3b8!2s%D8%A7%D9%84%D9%85%D8%B9%D9%87%D8%AF%20%D8%A7%D9%84%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%20%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%8A%E2%80%AD!5e0!3m2!1sen!2seg!4v1620161340270!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             <div class="cont-cap">
-                <label for="1">Name</label>
-                <input id="1" type="text">
-                <label for="2">Phone</label>
-                <input id="2" type="number">
-                <label for="3">E-mail</label>
-                <input id="3" type="email">
-                <label for="4">Ur Message</label>
-                <textarea name="Text Ur Message" id="textarea" cols="30" rows="10" placeholder="Text Ur Message . . ." required></textarea>
-                <button class="btn btn-primary"> Submit</button>
+                <!-- <label class="blue" for="name">Name</label> -->
+                <input id="name" type="text" placeholder="Name" required>
+
+                <!-- <label class="blue" for="phone">Phone</label> -->
+                <input id="phone" maxlength="11" type="text" placeholder="Phone Number" required>
+
+                <!-- <label class="blue" for="email">E-mail</label> -->
+                <input id="email" type="email" placeholder="Email" required>
+
+                <!-- <label class="blue" for="message">Ur Message</label> -->
+                <textarea name="Text Ur Message" id="message" cols="30" rows="10" placeholder="Text Ur Message . . ." required></textarea>
+                <button class="btn btn-primary" onclick="submitForm()">Submit</button>
             </div>
 
     </div>
@@ -478,7 +510,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
 
-
     <!-- jquery plugins here-->
     <script src="js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
@@ -497,6 +528,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- custom js -->
     <script src="WOW-master/dist/wow.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/navbar.js"></script>
     <script>
         new WOW().init();
     </script>
